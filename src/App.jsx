@@ -1,5 +1,11 @@
+import { Header } from './components/Header';
+import { MainSection } from './components/MainSection';
+
 const App = () => {
-  return <h1 className="text-xl text-center">Hello world</h1>;
+  return <>
+    <Header/>
+    <MainSection/>
+  </>
 };
 
 export default App;
