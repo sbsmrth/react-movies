@@ -9,6 +9,13 @@ export default {
       fontFamily: {
         'sans': ['Rubik', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        'main-bg': '#121415'
+      },
+      gridTemplateColumns: {
+        'movies-grid': 'repeat(auto-fill, 230px)',
+        'sm-movies-grid': 'w-11/12'
+      }
     },
   },
   plugins: [],

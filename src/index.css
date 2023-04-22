@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  ul {
+    @apply list-none;
+  }
+
+  body {
+    @apply bg-main-bg;
+  }
+
+  a {
+    @apply no-underline;
+  }
+}
