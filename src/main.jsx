@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element: <MainSection />
       },
       {
-        path: 'movies/:movid',
+        path: 'movies/:movId',
         element: <MovieDetails />
       }
     ]
