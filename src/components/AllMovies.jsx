@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { fetchData } from '../utils/fetchData';
 import { MovieCard } from './MovieCard';
-import { Loading } from './Loading';
+import { Spinner } from './Spinner';
 
 const apiRes = fetchData('https://api.themoviedb.org/3/discover/movie', {
     headers: {
@@ -12,23 +12,29 @@ const apiRes = fetchData('https://api.themoviedb.org/3/discover/movie', {
 
 const AllMovies = () => {
     const [movies, setMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
+        setIsLoading(true);
         apiRes.then(data => {
             setMovies(data.results);
+            setIsLoading(false);
         });
     }, [])
 
+
+    if (isLoading) {
+        return <Spinner></Spinner>;
+    }
+
     return <>
-        <Suspense fallback={<Loading />}>
-            <section>
-                <ul className='grid grid-cols-sm-movies-grid sm:grid-cols-movies-grid gap-10 justify-center p-5'>
-                    {movies.map(movie => (
-                        <MovieCard key={movie.id} movie={movie}></MovieCard>
-                    ))}
-                </ul>
-            </section>
-        </Suspense>
+        <section>
+            <ul className='grid grid-cols-sm-movies-grid sm:grid-cols-movies-grid gap-10 justify-center p-5'>
+                {movies.map(movie => (
+                    <MovieCard key={movie.id} movie={movie}></MovieCard>
+                ))}
+            </ul>
+        </section>
     </>
 };
 
