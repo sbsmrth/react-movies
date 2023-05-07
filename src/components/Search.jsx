@@ -17,7 +17,7 @@ const Search = () => {
         <form className="w-[250px] mb-9 mx-auto" onSubmit={handleSubmit}>   
             <label htmlFor="default-search" className="mb-2 text-sm font-medium sr-only">Search</label>
             <div className="relative">
-                <input type="text" className="block w-full p-1 pl-4 text-sm  border rounded-lg bg-white text-black focus:outline-none
+                <input type="text" className="block w-full p-1 pl-4 pr-9 text-sm  border rounded-lg bg-white text-black focus:outline-none
                  placeholder-black" placeholder="Search movies..." onChange={handleInputChange} value={search ?? ''} required />
                 <button type="submit" className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                     <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
