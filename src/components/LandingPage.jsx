@@ -8,12 +8,12 @@ const LandingPage = () => {
     const [query] = useSearchParams();
     const search = query.get('search');
 
-    const debouncedSearch = useDebounce(search, 1000);
+    const debouncedSearch = useDebounce(search, 500);
 
     return <>
         <section>
             <Search />
-            <AllMovies search={search}></AllMovies>
+            <AllMovies key={debouncedSearch} search={debouncedSearch}></AllMovies>
         </section>
     </>
 };

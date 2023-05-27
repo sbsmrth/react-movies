@@ -6,12 +6,12 @@ const Search = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-    }
+    };
 
     const handleInputChange = event => {
         const inputVal = event.target.value;
         setSearchParams({ search: inputVal });
-    }
+    };
 
     return <>
         <form className="w-[250px] mb-9 mx-auto" onSubmit={handleSubmit}>   
